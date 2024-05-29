@@ -1,6 +1,5 @@
 console.log("Hello");
 
-
 var data; // variable declaration
 data = []; // Initailze variable with empty object
 
