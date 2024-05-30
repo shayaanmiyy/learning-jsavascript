@@ -7,6 +7,13 @@
     <title>Document</title>
 
     <style>
+        hr {
+            max-width: 420px;
+            margin-left: 0;
+        }
+        .wrapper {
+            margin: 10px 0;
+        }
         .answerWrapper {
             margin-top: 15px;
             max-width: 400px;
@@ -21,7 +28,7 @@
 
 <body>
 
-    <h1>Please check console</h1>
+    <h1>JavaScript Sprint</h1>
 
     <div class="wrapper">
         <button onclick="score()">User Score</button>
@@ -31,9 +38,24 @@
         <button onclick="printDiamonds()">Diamond</button>
     </div>
 
+<hr>
+    <div class="wrapper">
+        <button onclick="askUser('us')">Unique Strings</button>
+        <button onclick="askUser('fw')">Find Word in a Sentence</button>
+        <button onclick="listLongestCountryByName()">Country</button>
+        <button onclick="palindrome()">Palindrome</button>
+        <br>
+        <br>
+        <button onclick="findRepeatLetter()">Find Repeat Letters</button>
+        <button onclick="sortArray()">Sort Array</button>
+        <button onclick="highestValue('loop')">Max Value In Array</button>
+        <button onclick="fibocacci()">Fibonacci</button>
+        
+    </div>
+
 
     <div class="answerWrapper">
-        <textarea name="" id="resultDiv" rows="10"></textarea>
+        <textarea name="" disabled id="resultDiv" rows="10"></textarea>
     </div>
 
     <script src="/script2.js"></script>

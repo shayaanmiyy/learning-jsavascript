@@ -105,3 +105,119 @@ function printAnswer(data) {
     let resultDiv = document.getElementById('resultDiv')
     resultDiv.value = data
 }
+
+// Functions Ticket Start Here
+
+// Extract Unique Character from Strings
+function getUnique(string) {
+    let splittedstring = string.split('');
+    let tempArr = []
+    splittedstring.forEach(words => {
+        if (!tempArr.includes(words)) {
+            tempArr.push(words)
+        }
+    });
+    printAnswer(tempArr.join(''));
+}
+
+function countWordPresence(string, word) {
+    let splittedstring = string.split('');
+    let counter = 0;
+    splittedstring.forEach(alphabet => {
+        if (alphabet == word) {
+            counter++
+        }
+    });
+    printAnswer(`The word ${string} contains ${counter} ${word}`);
+
+}
+
+function askUser(type) {
+    if (type == "fw") {
+        let string = prompt("Enter Your Sentence").toLowerCase();
+        let fincWord = prompt("Enter Word to count").toLowerCase();
+        countWordPresence(string, fincWord);
+    }
+    if (type == "us") {
+        let string = prompt("Enter Your Sentence (Leave Empty For Quick Brown Fox)").toLowerCase();
+        if (string == '') {
+            string = "thequickbrownfoxjumpsoverthelazydog"
+        }
+        getUnique(string);
+    }
+}
+
+function listLongestCountryByName() {
+    let countries = ["Australia", "Germany", "United States of America"]
+    let value = 0;
+    let rankCountry;
+    countries.forEach(country => {
+        let countrylength = country.split('').length;
+        if (countrylength > value) {
+            value = countrylength;
+            rankCountry = country
+        }
+    });
+    let printValue = `The ${rankCountry} has highest word Count of ${value} Letters`
+    printAnswer(printValue)
+}
+
+function palindrome() {
+    let palindromeString = prompt("Enter String you want to check. (Ex. racecar, madam");
+    let palindromeCheck = palindromeString.split('').reverse().join('');
+    let answer;
+    palindromeString == palindromeCheck ? answer = true : answer = false;
+    printAnswer(`The string ${palindromeString} is ${answer ? 'a Palindrome String' : 'not a palindrome string'}`);
+}
+
+function findRepeatLetter() {
+    let string = "abcdabced";
+    let splittedstring = string.split('');
+    let tempArr = [];
+    let uniqueString = 0;
+    splittedstring.forEach(words => {
+        if (tempArr[words]) {
+            tempArr[words]++
+        } else {
+            tempArr[words] = 1
+        }
+    });
+    splittedstring.forEach(words => {
+        if (tempArr[words] == 1) {
+            uniqueString = words;
+        }
+    });
+    printAnswer(`In ${string} we found ${uniqueString} as unique word`)
+}
+
+function sortArray() {
+    let array = [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
+    let sortedArray = array.sort((a, b) => {
+        return b - a;
+    });
+    printAnswer(sortedArray)
+}
+
+function highestValue(way) {
+    let numberArray = [1, 56, 34, 9, 345, 565, 3, 56];
+    let answer = 0;
+    if (way == "math") {
+        answer = Math.max(...numberArray)
+    } else {
+        numberArray.forEach(num => {
+            if (num > answer) {
+                answer = num
+            }
+        })
+    }
+    printAnswer(answer)
+}
+
+function fibocacci() {
+    let fibCount = prompt("Enter Number of Time for Fibonacci");
+    let fibSequence = [0, 1]; // Take two number by default
+    for (let i = 2; i < fibCount; i++) {
+        fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
+    }
+    printAnswer(fibSequence);
+}
