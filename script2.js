@@ -3,7 +3,6 @@
 // Task 1
 function score() {
     let score = prompt("Enter your score");
-    console.log(score);
     let userMesage = ""
 
     if (score > 100) {
@@ -25,38 +24,40 @@ function score() {
     alert(userMesage);
 }
 
-
 // Task 2
 function buzzfizz() {
-    let fizzNumber = 3
-    let buzzNumber = 5
+    let fizzNumber = 3;
+    let buzzNumber = 5;
+    let answer = ''
     for (i = 0; i <= 100; i++) {
         if (i % fizzNumber === 0 && i % buzzNumber === 0) {
-            console.log("FizzBuzz");
+            answer += "FizzBuzz \n"
         } else if (i % fizzNumber === 0) {
-            console.log("Fizz");
+            answer += "Fizz \n"
         } else if (i % buzzNumber === 0) {
-            console.log("Buzz");
+            answer += "Buzz \n"
         } else {
-            console.log(i);
+            answer += i + " \n"
         }
     }
+    printAnswer(answer)
 }
 
 function printTringle() {
-    // Steps Pattern
+    let answer = ''
     for (let i = 1; i <= 10; i++) {
         let starPattern = "";
         for (let j = 1; j <= i; j++) {
             starPattern += "*";
         }
-        console.log(starPattern);
+        answer += `${starPattern} \n`;
     }
+    return printAnswer(answer);
 }
 
 function printSquare() {
     let sqyareLastnumber = 10;
-    // Square Pattern
+    let answer = '';
     for (let i = 1; i <= sqyareLastnumber; i++) {
         let starPattern = "";
         if (i == 1 || i == sqyareLastnumber) {
@@ -64,15 +65,17 @@ function printSquare() {
         } else {
             starPattern = "*";
         }
-        console.log(starPattern);
-    }
-}
 
+        answer += `${starPattern} \n`;
+    }
+    return printAnswer(answer);
+}
 
 function printDiamonds() {
     // Diamond 
     let diamondValue = 10;
     let half = diamondValue / 2;
+    let answer = '';
 
     for (let i = 1; i <= half; i++) {
         let starPattern = '';
@@ -82,7 +85,7 @@ function printDiamonds() {
         for (let j = 1; j <= (2 * i - 1); j++) {
             starPattern += '*';
         }
-        console.log(starPattern);
+        answer += `${starPattern} \n`;
     }
 
     for (let i = half - 1; i >= 1; i--) {
@@ -93,7 +96,12 @@ function printDiamonds() {
         for (let j = 1; j <= (2 * i - 1); j++) {
             starPattern += '*';
         }
-        console.log(starPattern);
+        answer += `${starPattern} \n`;
     }
+    return printAnswer(answer);
+}
 
+function printAnswer(data) {
+    let resultDiv = document.getElementById('resultDiv')
+    resultDiv.value = data
 }

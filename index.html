@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <style>
+        .answerWrapper {
+            margin-top: 15px;
+            max-width: 400px;
+
+            textarea {
+                width: 100%;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -19,6 +30,12 @@
         <button onclick="printSquare()">Half Square</button>
         <button onclick="printDiamonds()">Diamond</button>
     </div>
+
+
+    <div class="answerWrapper">
+        <textarea name="" id="resultDiv" rows="10"></textarea>
+    </div>
+
     <script src="/script2.js"></script>
 </body>
 
