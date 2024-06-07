@@ -5,7 +5,6 @@ function printAnswers(data) {
 
 // Using Custom Function intead of console.log
 function logger(parm) {
-    // console.log(...parm); // destucuring it to log all the values
     let resultDiv = document.getElementById('resultDiv')
     resultDiv.value = [...parm]
 }
