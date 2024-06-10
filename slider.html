@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Demo styles -->
+    <style>
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+            margin: 10px auto;
+        }
+
+        .swiper {
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .customizeSlide .swiper-button-next::after,
+        .customizeSlide .swiper-button-prev::after {
+            content: '';
+        }
+
+        .customizeSlide .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+
+    <h1 class="text-center">Basic Slider</h1>
+    <div class="swiper basicSlider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-primary">Slide 1</div>
+            <div class="swiper-slide bg-danger">Slide 2</div>
+            <div class="swiper-slide bg-success">Slide 3</div>
+            <div class="swiper-slide bg-info">Slide 4</div>
+        </div>
+    </div>
+
+    <h1>Slide Navigation</h1>
+    <div class="swiper slideNavigation">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-success">Slide 1</div>
+            <div class="swiper-slide bg-danger">Slide 2</div>
+            <div class="swiper-slide bg-warning">Slide 3</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <h1>Slide Indicator</h1>
+    <div class="swiper slideIndicator">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-dark">Slide 1</div>
+            <div class="swiper-slide bg-primary">Slide 2</div>
+            <div class="swiper-slide bg-warning">Slide 3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <h1>Auto Play</h1>
+    <div class="swiper slideAutoplay">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-info">Slide 1</div>
+            <div class="swiper-slide bg-success">Slide 2</div>
+            <div class="swiper-slide bg-warning">Slide 3</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <h1>Mobile Support</h1>
+    <div class="swiper touchDrag">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-dark">Slide 1</div>
+            <div class="swiper-slide bg-info">Slide 2</div>
+            <div class="swiper-slide bg-secondary">Slide 3</div>
+        </div>
+    </div>
+
+    <h1>Slide With Content</h1>
+    <div class="swiper slideContent">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-light">
+                <div class="p-5">
+                    <img src="https://picsum.photos/seed/picsum/536/354" class="w-50 mx-auto" alt="">
+                    <h2 class="text-dark h3 mt-3">Slide With Content</h2>
+                    <p class="text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam earum at nam
+                        quo? Laboriosam assumenda accusantium reprehenderit odio obcaecati recusandae tempora corporis,
+                        explicabo qui itaque asperiores! Deleniti laboriosam possimus odit vitae officiis.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-info">
+                <div class="p-5">
+                    <img src="https://picsum.photos/seed/picsum/536/354" class="w-50 mx-auto" alt="">
+                    <h2 class="text-dark h3 mt-3">Slide With Content</h2>
+                    <p class="text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam earum at nam
+                        quo? Laboriosam assumenda accusantium reprehenderit odio obcaecati recusandae tempora corporis,
+                        explicabo qui itaque asperiores! Deleniti laboriosam possimus odit vitae officiis.</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-secondary">
+                <div class="p-2 p-lg-5">
+                    <img src="https://picsum.photos/seed/picsum/536/354" class="w-50 mx-auto" alt="">
+                    <h2 class="text-dark h3 mt-3">Slide With Content</h2>
+                    <p class="text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam earum at nam
+                        quo? Laboriosam assumenda accusantium reprehenderit odio obcaecati recusandae tempora corporis,
+                        explicabo qui itaque asperiores! Deleniti laboriosam possimus odit vitae officiis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>Responsive Slide</h1>
+    <div class="swiper responsiveSlide">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-dark">Slide 1</div>
+            <div class="swiper-slide bg-info">Slide 2</div>
+            <div class="swiper-slide bg-secondary">Slide 3</div>
+            <div class="swiper-slide bg-danger">Slide 4</div>
+            <div class="swiper-slide bg-warning">Slide 5</div>
+            <div class="swiper-slide bg-success">Slide 6</div>
+            <div class="swiper-slide bg-primary">Slide 7</div>
+            <div class="swiper-slide bg-light text-dark">Slide 8</div>
+            <div class="swiper-slide bg-gray text-dark">Slide 9</div>
+        </div>
+    </div>
+
+    <h1>Customize Slide</h1>
+    <div class="swiper customizeSlide">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-dark">Slide 1</div>
+            <div class="swiper-slide bg-info">Slide 2</div>
+            <div class="swiper-slide bg-secondary">Slide 3</div>
+            <div class="swiper-slide bg-danger">Slide 4</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination text-light"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next">
+            <!-- Navigation Custom Icons -->
+            <i class="bi bi-arrow-right-circle-fill fs-1 text-light"></i>
+        </div>
+        <div class="swiper-button-prev">
+            <!--  bg color white with css-->
+            <i class="bi bi-arrow-left-circle-fill fs-1 text-light"></i>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".basicSlider", {});
+
+        var swiper = new Swiper(".slideNavigation", {
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+
+        var swiper = new Swiper(".slideIndicator", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            }
+        });
+
+        var swiper = new Swiper(".slideAutoplay", {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        let asToggle = document.querySelector('.slideAutoplay');
+
+        asToggle.addEventListener('mouseenter', () => {
+            swiper.autoplay.stop();
+        });
+        asToggle.addEventListener('mouseleave', () => {
+            swiper.autoplay.start();
+        });
+
+        var swiper = new Swiper(".touchDrag", {
+            touchEventsTarget: 'container',
+            threshold: 20,
+        });
+
+        var swiper = new Swiper(".slideContent", {});
+
+        var swiper = new Swiper(".responsiveSlide", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                },
+            },
+        });
+
+        var swiper = new Swiper(".customizeSlide", {
+            direction: 'horizontal',
+            loop: true,
+            speed: 1000, // Custom Speed
+            autoplay: {
+                delay: 3000, // Custom Delay
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+    </script>
+</body>
+
+</html>
