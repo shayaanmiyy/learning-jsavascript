@@ -82,8 +82,8 @@ function employeeSalary() {
     let salary = prompt("What is your Hourly Salary?");
     let workinghour = prompt("How long did your worked in a month? (in hours)");
     let asnwer;
-    if (Number(workinghour)) {
-        asnwer = `Your Montly Salary for the time you wokred will be ${salary * workinghour}`
+    if (Number(workinghour) && Number(salary)) {
+        asnwer = `Your Montly Salary for the time you wokred will be ${salary * workinghour}Rs`
     } else {
         asnwer = "You have entered wrong prompt. Please Refresh to continue"
     }
@@ -128,20 +128,25 @@ function isThisInRange() {
 function replaceDolarr($) {
     var x = 10;
     var y = 30;
-    var z;
-    if ($ == '*') {
-        z = x * y;
-    }
-    if ($ == '+') {
-        z = x + y;
-    }
-    if ($ == '-') {
-        z = x - y;
-    }
-    if ($ == '/') {
-        z = x / y;
-    }
-    logger(["replaceDolar ", z, "We cannot evalute based on variable"]);
+    var z = 300; // 40, -20, 
+    let ops = ["+", "-", "/", "*"];
+    let answer = "n/a";
+    ops.forEach(o => {
+        if (o == '*' && x * y == z) {
+            answer = o;
+        }
+        if (o == '+' && x + y == z) {
+            answer = o;
+        }
+        if (o == '-' && x - y == z) {
+            answer = o;
+        }
+        if (o == '/' && x / y == z) {
+            answer = o;
+        }
+
+    });
+    logger(["replaceDolar ",`We Found ${answer} to be answer where value of z is ${z}`]);
 }
 // We cannot evalute based on variable
 function replaceDolar() {

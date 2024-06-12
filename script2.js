@@ -148,7 +148,11 @@ function askUser(type) {
 }
 
 function listLongestCountryByName() {
-    let countries = ["Australia", "Germany", "United States of America"]
+    let countries = [];
+    for (let i = 0; i < 3; i++) {
+        let c = prompt("Enter any Country Name for Your Choice");
+        countries.push(c)
+    }
     let value = 0;
     let rankCountry;
     countries.forEach(country => {
@@ -171,7 +175,7 @@ function palindrome() {
 }
 
 function findRepeatLetter() {
-    let string = "abcdabced";
+    let string = prompt("Please Enter String (Empty would be abcdabced") || "abcdabced";
     let splittedstring = string.split('');
     let tempArr = [];
     let uniqueString = 0;
@@ -187,7 +191,7 @@ function findRepeatLetter() {
             uniqueString = words;
         }
     });
-    printAnswer(`In ${string} we found ${uniqueString} as unique word`)
+    printAnswer(`In ${string} we found "${uniqueString}" as unique word`)
 }
 
 function sortArray() {
@@ -199,7 +203,8 @@ function sortArray() {
 }
 
 function highestValue(way) {
-    let numberArray = [1, 56, 34, 9, 345, 565, 3, 56];
+    let numberArray = prompt("Enter Number by comma separated");
+    numberArray = numberArray.split(',');
     let answer = 0;
     if (way == "math") {
         answer = Math.max(...numberArray)
