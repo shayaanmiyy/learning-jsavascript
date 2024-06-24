@@ -122,7 +122,7 @@ function getUnique(string) {
 
 function countWordPresence(string, word) {
   const splittedstring = string.split("");
-  const counter = 0;
+  let counter = 0;
   splittedstring.forEach((alphabet) => {
     if (alphabet == word) {
       counter++;

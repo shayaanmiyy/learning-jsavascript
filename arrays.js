@@ -38,20 +38,20 @@ function lastOrFirst() {
 
 // Write a JavaScript program to reverse the elements of a given array of integers of length 3.
 function reverseArray() {
-  const array = [1, 2, 4];
+  const givenData = [1, 2, 4];
   let answer;
-  answer = array.reverse();
-  logger(["input Array", array, "reverseArray", answer]);
+  answer = givenData.reverse();
+  logger(["input Array", givenData, "reverseArray", answer]);
 }
 
 // Write a JavaScript program to create an array by taking the first and last elements from a given array of integers. The length must be larger than or equal to 1.
 function createByFirstAndLast() {
-  const array = [1, 2, 4];
+  const givenData = [1, 2, 4];
   let answer;
-  if (array.length >= 1) {
-    answer = [array[0], array[array.length - 1]];
+  if (givenData.length >= 1) {
+    answer = [givenData[0], givenData[givenData.length - 1]];
   }
-  logger(["input Array", array, "createByFirstAndLast", answer]);
+  logger(["input Array", givenData, "createByFirstAndLast", answer]);
 }
 
 // Write a JavaScript program to find the longest string from a given array of strings.
@@ -85,11 +85,12 @@ function divideAndSum() {
       sum2 += arr[i];
     }
   }
-  logger([["input Array", array, "divideAndSum", sum1, sum2]]);
+  logger([["input Array", arr, "divideAndSum", sum1, sum2]]);
 }
 
 // Write a JavaScript program to determine if two arrays of integers of the same length are similar. The arrays will be similar if one array can be obtained from another array by swapping at most one pair of elements
 function areArraysSimilar(arr1, arr2) {
+  // Parameter of arr1 & arr2
   if (arr1.length !== arr2.length) {
     // Check both parameter length
     return false;
@@ -115,13 +116,23 @@ function areArraysSimilar(arr1, arr2) {
 
 function areSimilar() {
   // This is the Main Function which then call areArraysSimilar()
-  const array1 = [1, 2, 3]; // Array 1
-  const array2 = [1, 3, 2]; // Array 2
-  logger(["input Array", array1, array1, areArraysSimilar(array1, array2)]); // true
+  const givenData1 = [1, 2, 3]; // Array 1
+  const givenData2 = [1, 3, 2]; // Array 2
+  logger([
+    "input Array",
+    givenData1,
+    givenData2,
+    areArraysSimilar(givenData1, givenData2),
+  ]); // true
 
-  const array7 = [1, 2, 4, 3];
-  const array8 = [2, 1, 3, 4];
-  logger(["input Array", array7, array8, areArraysSimilar(array7, array8)]); // false
+  const givenData7 = [1, 2, 4, 3];
+  const givenData8 = [2, 1, 3, 4];
+  logger([
+    "input Array",
+    givenData7,
+    givenData8,
+    areArraysSimilar(givenData7, givenData8),
+  ]); // false
 }
 
 // Write a JavaScript program to replace all numbers with a specified number in an array of integers.
@@ -227,7 +238,7 @@ function reduceArray(arr, initialValue) {
   return result;
 }
 
-function reduceArrr() {
+function reduceValue() {
   const givenData = [1, 2, 3, 4];
 
   let sumResult = reduceArray(givenData, 0);
@@ -260,12 +271,12 @@ const functionList = [
   "countInversions",
   "addArrSum",
   "getSortedPrimes",
-  "reduceArrr",
+  "reduceValue",
 ];
 
 let functionHtml = "";
 functionList.forEach((item) => {
-  functionHtml += `<button onclick="${item}()">${item}</button> &emsp;`;
+  functionHtml += `<button class="btn btn-primary" onclick="${item}()">${item}</button> &emsp;`;
 });
 
 const mainBody = document.getElementsByTagName("main");
