@@ -133,12 +133,12 @@ function countWordPresence(string, word) {
 
 function askUser(type) {
   if (type == "fw") { // Find Words In Sentence
-    const string = prompt("Enter Your Sentence").toLowerCase();
+    let string = prompt("Enter Your Sentence").toLowerCase();
     const fincWord = prompt("Enter Word to count").toLowerCase();
     countWordPresence(string, fincWord);
   }
   if (type == "us") { // unique Strings
-    const string = prompt(
+    let string = prompt(
       "Enter Your Sentence (Leave Empty For Quick Brown Fox)"
     ).toLowerCase();
     if (string == "") {
@@ -238,7 +238,7 @@ function bubbleSort() {
 }
 
 function highestValue(way) {
-  const numberArray = prompt("Enter Number by comma separated"); // propt fromm user
+  let numberArray = prompt("Enter Number by comma separated"); // propt fromm user
   numberArray = numberArray.split(","); // separating values by comma entered by user
   let answer = 0; // default Value
   if (way == "math") {

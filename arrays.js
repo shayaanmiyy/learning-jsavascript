@@ -57,7 +57,7 @@ function createByFirstAndLast() {
 // Write a JavaScript program to find the longest string from a given array of strings.
 function findLongestString() {
   const givenStrings = ["abcdefghijk", "abcde", "abcdefghij"];
-  const stringLength = 0;
+  let stringLength = 0;
   let stringName = "";
   givenStrings.forEach((item) => {
     if (stringLength < item.length) {
@@ -236,7 +236,7 @@ function reduceArrr() {
 
   logger([
     "Input Array",
-    array,
+    givenData,
     "Reduced Value by 0 => ",
     sumResult,
     "Reduced Value by 1 => ",
