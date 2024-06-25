@@ -19,11 +19,12 @@ function sumOfThreeElements() {
 
 // Write a JavaScript program to rotate the elements left in a given array of integers of length 3.
 function rotateArrayLeft() {
-  const givenData = [1, 2, 4];
-  if (givenData.length == 3) {
-    givenData.push(givenData.shift());
+  const givenData = [1, 2, 4]; // Given Data
+  const answer = []; // Answer Will be here; Used const beacuse we are inserting not changing
+  if (givenData.length == 3) { // Check for length 3
+    answer.push(givenData.shift()); // Firt Shift element then Push it into answer 
   }
-  logger(["Input Array", [1, 2, 4], "rotateArrayLeft", givenData]);
+  logger(["Input Array", givenData, "rotateArrayLeft", answer]);
 }
 
 // Write a JavaScript program to check whether 1 appears in the first or last position of a given array of integers. The array length must be larger than or equal to 1.
@@ -172,7 +173,7 @@ function countInversions() {
     for (let j = i + 1; j < arlen; j++) {
       // again loop
       if (arr[i] > arr[j]) {
-        // compae first elem with same arr 2nd elem
+        // compare first element with same arr 2nd element
         invCount++;
       }
     }
@@ -184,16 +185,16 @@ function countInversions() {
 In computer science, the prefix sum, cumulative sum, inclusive scan, or simply scan of a sequence of numbers x0, x1, x2, ... is a second sequence of numbers y0, y1, y2, ..., the sums of prefixes of the input sequence:y0 = x0y1 = x0 + x1y2 = x0 + x1+ x2 */
 
 function addArrSum() {
-  const arr = [1, 2, 3, 4, 5];
-  let sumArr = [];
+  const givenData = [1, 2, 3, 4, 5]; // Given Data
+  const sumArr = []; // Will Push into this
   let currentSum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    currentSum += arr[i];
+  for (let i = 0; i < givenData.length; i++) {
+    currentSum += givenData[i];
     sumArr.push(currentSum);
   }
 
-  logger(["input Array", arr, "addArrSum", sumArr]);
+  logger(["input Array", givenData, "addArrSum", sumArr]);
 }
 
 // Write a JavaScript program to sort an array of all prime numbers between 1 and a given integer.
@@ -241,9 +242,9 @@ function reduceArray(arr, initialValue) {
 function reduceValue() {
   const givenData = [1, 2, 3, 4];
 
-  let sumResult = reduceArray(givenData, 0);
-  let productResult = reduceArray(givenData, 1);
-  let subtractResult = reduceArray(givenData, 10);
+  const sumResult = reduceArray(givenData, 0);
+  const productResult = reduceArray(givenData, 1);
+  const subtractResult = reduceArray(givenData, 10);
 
   logger([
     "Input Array",
