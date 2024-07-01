@@ -19,11 +19,12 @@ function sumOfThreeElements() {
 
 // Write a JavaScript program to rotate the elements left in a given array of integers of length 3.
 function rotateArrayLeft() {
-  const givenData = [1, 2, 4];
-  if (givenData.length == 3) {
-    givenData.push(givenData.shift());
+  const givenData = [1, 2, 4]; // Given Data
+  const answer = []; // Answer Will be here; Used const beacuse we are inserting not changing
+  if (givenData.length == 3) { // Check for length 3
+    answer.push(givenData.shift()); // Firt Shift element then Push it into answer 
   }
-  logger(["Input Array", [1, 2, 4], "rotateArrayLeft", givenData]);
+  logger(["Input Array", givenData, "rotateArrayLeft", answer]);
 }
 
 // Write a JavaScript program to check whether 1 appears in the first or last position of a given array of integers. The array length must be larger than or equal to 1.
@@ -75,17 +76,18 @@ function findLongestString() {
 
 // Write a JavaScript program to divide a given array of positive integers into two parts. First element belongs to the first part, second element belongs to the second part, and third element belongs to the first part and so on. Now compute the sum of two parts and store it in an array of size two.
 function divideAndSum() {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const givenData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   let sum1 = 0;
   let sum2 = 0;
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < givenData.length; i++) {
     if (i % 2 === 0) {
-      sum1 += arr[i];
+      sum1 += givenData[i];
     } else {
-      sum2 += arr[i];
+      sum2 += givenData[i];
     }
   }
-  logger([["input Array", arr, "divideAndSum", sum1, sum2]]);
+
+  logger([["input Array", givenData, "divideAndSum", sum1, sum2]]);
 }
 
 // Write a JavaScript program to determine if two arrays of integers of the same length are similar. The arrays will be similar if one array can be obtained from another array by swapping at most one pair of elements
@@ -164,36 +166,36 @@ function findElement() {
 // Write a JavaScript program to find the number of inversions of a given array of integers. Note: Two elements of the array a stored at positions i and j form an inversion if a[i] > a[j] and i < j.
 
 function countInversions() {
-  const arr = [1, 20, 6, 4, 5];
+  const givenData = [1, 20, 6, 4, 5];
   let invCount = 0;
-  const arlen = arr.length;
+  const arlen = givenData.length;
   for (let i = 0; i < arlen; i++) {
     // go on each elem of arr
     for (let j = i + 1; j < arlen; j++) {
       // again loop
-      if (arr[i] > arr[j]) {
-        // compae first elem with same arr 2nd elem
+      if (givenData[i] > givenData[j]) {
+        // compare first element with same arr 2nd element
         invCount++;
       }
     }
   }
-  logger(["input Array", arr, "countInversions", invCount]);
+  logger(["input Array", givenData, "countInversions", invCount]);
 }
 
 /* Write a JavaScript program to create an array of prefix sums of the given array.
 In computer science, the prefix sum, cumulative sum, inclusive scan, or simply scan of a sequence of numbers x0, x1, x2, ... is a second sequence of numbers y0, y1, y2, ..., the sums of prefixes of the input sequence:y0 = x0y1 = x0 + x1y2 = x0 + x1+ x2 */
 
 function addArrSum() {
-  const arr = [1, 2, 3, 4, 5];
-  let sumArr = [];
+  const givenData = [1, 2, 3, 4, 5]; // Given Data
+  const sumArr = []; // Will Push into this
   let currentSum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    currentSum += arr[i];
+  for (let i = 0; i < givenData.length; i++) {
+    currentSum += givenData[i];
     sumArr.push(currentSum);
   }
 
-  logger(["input Array", arr, "addArrSum", sumArr]);
+  logger(["input Array", givenData, "addArrSum", sumArr]);
 }
 
 // Write a JavaScript program to sort an array of all prime numbers between 1 and a given integer.
@@ -225,13 +227,13 @@ function getSortedPrimes() {
 }
 
 // Write a JavaScript program to apply a function against an accumulator and each element in the array (from left to right), returning an array of successively reduced values.
-function reduceArray(arr, initialValue) {
+function reduceArray(givenData, initialValue) {
   const result = [];
   let accumulator = initialValue;
   const callback = (acc, curr) => acc + curr;
 
-  for (let i = 0; i < arr.length; i++) {
-    accumulator = callback(accumulator, arr[i]);
+  for (let i = 0; i < givenData.length; i++) {
+    accumulator = callback(accumulator, givenData[i]);
     result.push(accumulator);
   }
 
@@ -241,9 +243,9 @@ function reduceArray(arr, initialValue) {
 function reduceValue() {
   const givenData = [1, 2, 3, 4];
 
-  let sumResult = reduceArray(givenData, 0);
-  let productResult = reduceArray(givenData, 1);
-  let subtractResult = reduceArray(givenData, 10);
+  const sumResult = reduceArray(givenData, 0);
+  const productResult = reduceArray(givenData, 1);
+  const subtractResult = reduceArray(givenData, 10);
 
   logger([
     "Input Array",

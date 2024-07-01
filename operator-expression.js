@@ -69,19 +69,19 @@ function addForm() {
                     <hr>
                     <div class="mb-3">
                         <label for="itemName${counter}" class="form-label">Item Name</label>
-                        <input type="text" required name="itemName${counter}" class="form-control" id="itemName${counter}">
+                        <input type="text" required name="itemName${counter}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="itemPrice" class="form-label">Item Price</label>
-                        <input type="number" required name="itemPrice${counter}" class="form-control" id="itemPrice${counter}">
+                        <input type="number" required name="itemPrice${counter}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="itemQuantity${counter}" class="form-label">Item Quantity</label>
-                        <input type="number" required name="itemQuantity${counter}" class="form-control" id="itemQuantity${counter}">
+                        <input type="number" required name="itemQuantity${counter}" class="form-control">
                     </div>
                 </div>`;
   document
-    .getElementById("inputForm")
+    .getElementById("form-container")
     .insertAdjacentHTML("beforeend", formHtml); //innerHtml+= will append the entire HTML and will remove old inserted values
 }
 
@@ -93,7 +93,7 @@ function employeeSalary() {
   let answer;
   if (Number(workinghour) && Number(salary)) {
     // Check for Numbers
-    answer = `Your Montly Salary for the time you wokred will be ${
+    answer = `Your Monthly Salary for the time you wokred will be ${
       salary * workinghour
     }Rs`;
   } else {
@@ -159,9 +159,9 @@ function operatorCheck() {
   const x = 10;
   const y = 30;
   const z = 300; // 40, -20,
-  const ops = ["+", "-", "/", "*"];
+  const operators = ["+", "-", "/", "*"];
   let answer = "n/a";
-  ops.forEach((o) => {
+  operators.forEach((o) => {
     if (o == "*" && x * y == z) {
       // checking if * works?
       answer = o;
