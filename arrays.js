@@ -86,6 +86,7 @@ function divideAndSum() {
       sum2 += givenData[i];
     }
   }
+
   logger([["input Array", givenData, "divideAndSum", sum1, sum2]]);
 }
 
